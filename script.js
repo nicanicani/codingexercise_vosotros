@@ -38,7 +38,21 @@ else{
     var hun = digit.slice(0,1);
     var ten = digit.slice(1,2);
     var one = digit.slice(2,3);
-    document.getElementById("breakdown").innerHTML = "Breakdown: " + hun + "00, " + ten + "0, " + one;
+    // Incase the generated number has 0 as the tens
+    if(ten == 0){
+        // Print the breakdown of the number
+        document.getElementById("breakdown").innerHTML = "Breakdown: " + hun + "00, " + one;
+    }
+    // Incase the generated number has 0 as the ones
+    else if(one == 0){
+        // Print the breakdown of the number
+        document.getElementById("breakdown").innerHTML = "Breakdown: " + hun + "00, " + ten + "0";
+    }
+    // When it generates numbers that don't have zeros
+    else{    
+        // Print the breakdown of the number
+        document.getElementById("breakdown").innerHTML = "Breakdown: " + hun + "00, " + ten + "0, " + one;
+    }
 }
 
 // Print the current date
