@@ -12,8 +12,14 @@ var long = digit.length;
 if(long == 2){
     ten = digit.slice(0,1);
     one = digit.slice(1,2);
-    // Print the breakdown of the number
-    document.getElementById("breakdown").innerHTML = "Breakdown: " + ten + "0, " + one;
+    if(one == 0){
+        // Print the breakdown of the number
+        document.getElementById("breakdown").innerHTML = "Breakdown: " + ten + "0";
+    }
+    else{
+        // Print the breakdown of the number
+        document.getElementById("breakdown").innerHTML = "Breakdown: " + ten + "0, " + one;
+    }
 }
 // Incase the generated number is a 1 digit number
 else if(long == 1){
